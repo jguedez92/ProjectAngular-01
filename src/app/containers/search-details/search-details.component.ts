@@ -9,29 +9,36 @@ import { TvShowService } from 'src/app/services/tv-show.service';
 })
 export class SearchDetailsComponent implements OnInit {
 
-  @Input() infoDetails:any; 
-  @Input() findSimilar:any;
-  @Input() findTvSimilar:any;
+  @Input() infoDetails: any;
+  @Input() findSimilar: any;
+  @Input() findTvSimilar: any;
   @Output() changeStatusDetail = new EventEmitter<string>();
   @Output() changeStatusSimilar = new EventEmitter<string>();
   @Output() changeStatusTvSimilar = new EventEmitter<string>();
-  
+
 
   constructor() { }
 
   ngOnInit(): void {
-    if(!this.infoDetails){
+    if (!this.infoDetails) {
       this.infoDetails = {
-        title:"",
-        release_date:"",
-        overview:"",
-        poster_path:""
+        title: "",
+        release_date: "",
+        overview: "",
+        poster_path: ""
       }
     }
-    
   }
 
-  backComponent(){
+  setDetails(arg) {
+    this.infoDetails = arg;
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
+
+  backComponent() {
     event.preventDefault();
     this.infoDetails = "";
     this.findSimilar = "";

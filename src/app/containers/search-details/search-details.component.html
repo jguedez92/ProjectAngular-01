@@ -76,7 +76,7 @@
           <h5 class="mb-0">{{movie.title}}</h5>
           <div class="mb-1 text-muted">{{movie.release_date}}</div>
           <p class="card-text text-justify mb-auto">{{movie.text}}...</p>
-
+          <button class="btn btn-outline-primary" (click)="setDetails(movie)">... Más detalles</button>
 
         </div>
         <div class="col-lg-auto ">
@@ -104,6 +104,7 @@
           <h5 class="mb-0">{{tv.name}}</h5>
           <div class="mb-1 text-muted">{{tv.first_air_date}}</div>
           <p class="card-text text-justify mb-auto">{{tv.text}}...</p>
+          <button class="btn btn-outline-primary" (click)="setDetails(tv)">... Más detalles</button>
         </div>
         <div class="col-lg-auto ">
 

@@ -53,7 +53,6 @@ export class TvShowComponent implements OnInit {
       res=>{
         this.tvSimilar = res.results.filter( tv => tv.poster_path && tv.overview.length > 0 )
         .map(tv => ({ ...tv, text: tv.overview.slice(0, 90) }));
-        console.log(this.tvSimilar)
       },
       error => console.log(error));
   }
