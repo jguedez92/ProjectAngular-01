@@ -7,8 +7,9 @@ import { TvShowService } from 'src/app/services/tv-show.service';
   styleUrls: ['./tv-show.component.scss']
 })
 export class TvShowComponent implements OnInit {
-  public tvPopular;
-  public tvFinder;
+  public tvPopular:Array<any>;
+  public tvFinder:Array<any>;
+  public tvSimilar:Array<any>;
   public resultValid;
   public detail: any;
 
@@ -44,9 +45,17 @@ export class TvShowComponent implements OnInit {
       error=>console.log(error));
   }
 
-  setDetails(movie:any){
-    this.detail = movie;
-    console.log(this.detail)
+  setDetails(tv:any){
+    this.detail = tv;
+
+    this.tvShowService.getSimilarTv(this.detail.id)
+    .subscribe(
+      res=>{
+        this.tvSimilar = res.results.filter( tv => tv.poster_path && tv.overview.length > 0 )
+        .map(tv => ({ ...tv, text: tv.overview.slice(0, 90) }));
+        console.log(this.tvSimilar)
+      },
+      error => console.log(error));
   }
 
 }

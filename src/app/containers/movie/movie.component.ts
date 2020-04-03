@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { MoviesService } from 'src/app/services/movies.service';
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.scss']
 })
-export class MovieComponent implements OnInit {
+export class MovieComponent implements OnInit{
   public moviesPopular:Array<any>;
   public moviesFinder:Array<any>;
   public movieSimilar:Array<any>;
@@ -53,7 +53,6 @@ export class MovieComponent implements OnInit {
       res=>{
         this.movieSimilar = res.results.filter( movie => movie.poster_path && movie.overview.length > 0 )
         .map(movie => ({ ...movie, text: movie.overview.slice(0, 90) }));
-        console.log(this.movieSimilar)
       },
       error => console.log(error));
   }

@@ -1,59 +1,65 @@
 <div *ngIf="infoDetails.title" class="container col-lg-10">
-    <div class="col-sm-12 col-md-12 col-lg-12">
-        <div
-          class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-primary">+16</strong>
-            <h2 class="mb-0">{{infoDetails.title}}</h2>
-            <div class="mb-1 text-muted">{{infoDetails.release_date}}</div>
-            <p class="card-text text-justify mb-auto">{{infoDetails.overview}}</p>
-            <ul class="list-group mt-3 list-group-horizontal">
-              <li class="list-group-item font-weight-bolder">Average de Votos: <span class="text-muted">{{infoDetails.vote_average}}</span></li>
-              <li class="list-group-item font-weight-bolder text-uppercase">Lenguaje Original: <span class="font-weight-normal ">{{infoDetails.original_language}}</span></li>
-              <li class="list-group-item font-weight-bolder">Popularidad: <span class="font-weight-normal">{{infoDetails.popularity}}</span></li>
-          </ul>
-          </div>
-          <div class="col-lg-auto ">
-            <div class="row p-2">
-              <div class="col-12 my-auto p2">
-                <img class="rounded" src="https://image.tmdb.org/t/p/w185{{infoDetails.poster_path}}" width="200" alt="....">
-              </div>
-            </div>
-          </div>
-          <div class="card-footer col-lg-12 text-right p-3">
-            <a href="#" (click)="backComponent()" class="card-link">Atras</a>
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary">+16</strong>
+        <h2 class="mb-0">{{infoDetails.title}}</h2>
+        <div class="mb-1 text-muted">{{infoDetails.release_date}}</div>
+        <p class="card-text text-justify mb-auto">{{infoDetails.overview}}</p>
+        <ul class="list-group mt-3 list-group-horizontal">
+          <li class="list-group-item font-weight-bolder">Average de Votos: <span
+              class="text-muted">{{infoDetails.vote_average}}</span></li>
+          <li class="list-group-item font-weight-bolder text-uppercase">Lenguaje Original: <span
+              class="font-weight-normal ">{{infoDetails.original_language}}</span></li>
+          <li class="list-group-item font-weight-bolder">Popularidad: <span
+              class="font-weight-normal">{{infoDetails.popularity}}</span></li>
+        </ul>
+      </div>
+      <div class="col-lg-auto ">
+        <div class="row p-2">
+          <div class="col-12 my-auto p2">
+            <img class="rounded" src="https://image.tmdb.org/t/p/w185{{infoDetails.poster_path}}" width="200"
+              alt="....">
           </div>
         </div>
-        
       </div>
+      <div class="card-footer col-lg-12 text-right p-3">
+        <a href="#" (click)="backComponent()" class="card-link">Atras</a>
+      </div>
+    </div>
+
+  </div>
 </div>
 <div *ngIf="infoDetails.name" class="container col-lg-10">
   <div class="col-sm-12 col-md-12 col-lg-12">
-      <div
-        class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">+16</strong>
-          <h2 class="mb-0">{{infoDetails.name}}</h2>
-          <div class="mb-1 text-muted">{{infoDetails.first_air_date}}</div>
-          <p class="card-text text-justify mb-auto">{{infoDetails.overview}}</p>
-          <ul class="list-group mt-3 list-group-horizontal">
-            <li class="list-group-item font-weight-bolder">Average de Votos: <span class="text-muted">{{infoDetails.vote_average}}</span></li>
-            <li class="list-group-item font-weight-bolder text-uppercase">Lenguaje Original: <span class="font-weight-normal ">{{infoDetails.original_language}}</span></li>
-            <li class="list-group-item font-weight-bolder">Popularidad: <span class="font-weight-normal">{{infoDetails.popularity}}</span></li>
+    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary">+16</strong>
+        <h2 class="mb-0">{{infoDetails.name}}</h2>
+        <div class="mb-1 text-muted">{{infoDetails.first_air_date}}</div>
+        <p class="card-text text-justify mb-auto">{{infoDetails.overview}}</p>
+        <ul class="list-group mt-3 list-group-horizontal">
+          <li class="list-group-item font-weight-bolder">Average de Votos: <span
+              class="text-muted">{{infoDetails.vote_average}}</span></li>
+          <li class="list-group-item font-weight-bolder text-uppercase">Lenguaje Original: <span
+              class="font-weight-normal ">{{infoDetails.original_language}}</span></li>
+          <li class="list-group-item font-weight-bolder">Popularidad: <span
+              class="font-weight-normal">{{infoDetails.popularity}}</span></li>
         </ul>
-        </div>
-        <div class="col-lg-auto ">
-          <div class="row p-2">
-            <div class="col-12 my-auto p2">
-              <img class="rounded" src="https://image.tmdb.org/t/p/w185{{infoDetails.poster_path}}" width="200" alt="....">
-            </div>
+      </div>
+      <div class="col-lg-auto ">
+        <div class="row p-2">
+          <div class="col-12 my-auto p2">
+            <img class="rounded" src="https://image.tmdb.org/t/p/w185{{infoDetails.poster_path}}" width="200"
+              alt="....">
           </div>
         </div>
-        <div class="card-footer col-lg-12 text-right p-3">
-          <a href="#" (click)="backComponent()" class="card-link">Atras</a>
-        </div>
-      </div>  
+      </div>
+      <div class="card-footer col-lg-12 text-right p-3">
+        <a href="#" (click)="backComponent()" class="card-link">Atras</a>
+      </div>
     </div>
+  </div>
 </div>
 
 <div class="col-md-12 blog-main" *ngIf="findSimilar">
@@ -64,15 +70,14 @@
   </div><!-- /.row border-bottom -->
   <div class="row mt-4">
     <div *ngFor="let movie of findSimilar" class="col-sm-12 col-md-12 col-lg-6">
-      <div
-        class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
           <strong class="d-inline-block mb-2 text-primary">+16</strong>
           <h5 class="mb-0">{{movie.title}}</h5>
           <div class="mb-1 text-muted">{{movie.release_date}}</div>
           <p class="card-text text-justify mb-auto">{{movie.text}}...</p>
-          
-          
+
+
         </div>
         <div class="col-lg-auto ">
 
@@ -82,7 +87,30 @@
       </div>
     </div>
   </div><!-- /.row mt-4-->
+</div>
 
 
+<div class="col-md-12 blog-main" *ngIf="findTvSimilar">
+  <div class="row border-bottom">
+    <div class="col-lg-8">
+      <h2 class="blog-post-title mt-3 mb-3">Similares</h2>
+    </div>
+  </div><!-- /.row border-bottom -->
+  <div class="row mt-4">
+    <div *ngFor="let tv of findTvSimilar" class="col-sm-12 col-md-12 col-lg-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">+16</strong>
+          <h5 class="mb-0">{{tv.name}}</h5>
+          <div class="mb-1 text-muted">{{tv.first_air_date}}</div>
+          <p class="card-text text-justify mb-auto">{{tv.text}}...</p>
+        </div>
+        <div class="col-lg-auto ">
 
+          <img class="my-auto" src="https://image.tmdb.org/t/p/w185{{tv.poster_path}}" width="185" alt="....">
 
+        </div>
+      </div>
+    </div>
+  </div><!-- /.row mt-4-->
+</div>

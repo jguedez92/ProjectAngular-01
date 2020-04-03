@@ -17,4 +17,8 @@ export class TvShowService {
     return this.httpClient.get('https://api.themoviedb.org/3/search/tv?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES&page=1&include_adult=false&query='+arg);
   }
 
+  getSimilarTv(id):Observable<any>{
+    return this.httpClient.get('https://api.themoviedb.org/3/tv/'+id+'/similar?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES&page=1')
+  }
+
 }

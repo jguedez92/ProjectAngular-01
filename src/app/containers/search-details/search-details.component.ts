@@ -11,8 +11,11 @@ export class SearchDetailsComponent implements OnInit {
 
   @Input() infoDetails:any; 
   @Input() findSimilar:any;
+  @Input() findTvSimilar:any;
   @Output() changeStatusDetail = new EventEmitter<string>();
-
+  @Output() changeStatusSimilar = new EventEmitter<string>();
+  @Output() changeStatusTvSimilar = new EventEmitter<string>();
+  
 
   constructor() { }
 
@@ -25,12 +28,17 @@ export class SearchDetailsComponent implements OnInit {
         poster_path:""
       }
     }
+    
   }
 
   backComponent(){
     event.preventDefault();
     this.infoDetails = "";
+    this.findSimilar = "";
+    this.findTvSimilar = "";
     this.changeStatusDetail.emit(this.infoDetails);
+    this.changeStatusSimilar.emit(this.findSimilar);
+    this.changeStatusTvSimilar.emit(this.findTvSimilar);
   }
 
 }
