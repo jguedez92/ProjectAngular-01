@@ -9,6 +9,7 @@ import { MoviesService } from 'src/app/services/movies.service';
 export class MovieComponent implements OnInit {
   public moviesPopular:Array<any>;
   public moviesFinder:Array<any>;
+  public movieSimilar:Array<any>;
   public detail:any;
   public resultValid:boolean;
 
@@ -46,6 +47,15 @@ export class MovieComponent implements OnInit {
 
   setDetails(movie:any){
     this.detail = movie;
+
+    this.moviesService.getSimilarMovies(this.detail.id)
+    .subscribe(
+      res=>{
+        this.movieSimilar = res.results.filter( movie => movie.poster_path && movie.overview.length > 0 )
+        .map(movie => ({ ...movie, text: movie.overview.slice(0, 90) }));
+        console.log(this.movieSimilar)
+      },
+      error => console.log(error));
   }
 
   

@@ -8,6 +8,7 @@ import { MoviesService } from 'src/app/services/movies.service';
 })
 export class HomeComponent implements OnInit {
   public moviesPremiere;
+  public movieSimilar:Array<any>;
   public detail:any;
   
 
@@ -25,7 +26,15 @@ export class HomeComponent implements OnInit {
 
   setDetails(movie:any){
     this.detail = movie;
-    
+
+    this.moviesService.getSimilarMovies(this.detail.id)
+    .subscribe(
+      res=>{
+        this.movieSimilar = res.results.filter( movie => movie.poster_path && movie.overview.length > 0 )
+        .map(movie => ({ ...movie, text: movie.overview.slice(0, 90) }));
+        console.log(this.movieSimilar)
+      },
+      error => console.log(error));
   }
 
 }

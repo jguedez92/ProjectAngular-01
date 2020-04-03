@@ -9,7 +9,8 @@ import { TvShowService } from 'src/app/services/tv-show.service';
 })
 export class SearchDetailsComponent implements OnInit {
 
-  @Input() infoDetails:any;
+  @Input() infoDetails:any; 
+  @Input() findSimilar:any;
   @Output() changeStatusDetail = new EventEmitter<string>();
 
 
