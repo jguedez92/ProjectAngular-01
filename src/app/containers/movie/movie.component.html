@@ -1,0 +1,80 @@
+<div class="row">
+
+  <div class="col-md-12 blog-main" *ngIf="moviesFinder && !detail">
+    <div class="row border-bottom">
+      <div class="col-lg-8">
+        <h2 class="blog-post-title mb-3">Resultados de la Busqueda</h2>
+      </div>
+      <div class="col-lg-4">
+        <form (submit)="getAll($event)" class="form-inline my-2 my-lg-0">
+          <input name="finder" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </div><!-- /.row border-bottom -->
+    <div class="row mt-4" *ngIf="resultValid">
+      <div *ngFor="let movie of moviesFinder" class="col-sm-12 col-md-12 col-lg-6">
+        <div
+          class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">+16</strong>
+            <h5 class="mb-0">{{movie.title}}</h5>
+            <div class="mb-1 text-muted">{{movie.release_date}}</div>
+            <p class="card-text text-justify mb-auto">{{movie.text}}...</p>
+            <button class="btn btn-outline-primary" (click)="setDetails(movie)">... Más detalles</button>
+            
+          </div>
+          <div class="col-lg-auto ">
+
+            <img class="my-auto" src="https://image.tmdb.org/t/p/w185{{movie.poster_path}}" width="185" alt="....">
+
+          </div>
+        </div>
+      </div>
+    </div><!-- /.row mt-4-->
+    <div class="row mt-4" *ngIf="!resultValid">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <img class="" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebmarketingschool.com%2Fwp-content%2Fuploads%2F2018%2F03%2Fnojobsfound.png&f=1&nofb=1" alt="....">
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div><!-- /.blog-main -->
+
+
+  <div class="col-md-12 blog-main" *ngIf="!moviesFinder && !detail">
+    <div class="row border-bottom">
+      <div class="col-lg-8">
+        <h2 class="blog-post-title mb-3">Peliculas populares</h2>
+      </div>
+      <div class="col-lg-4">
+        <form (submit)="getAll($event)" class="form-inline my-2 my-lg-0">
+          <input name="finder" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div *ngFor="let movie of moviesPopular" class="col-sm-12 col-md-12 col-lg-6">
+        <div
+          class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">+16</strong>
+            <h5 class="mb-0">{{movie.title}}</h5>
+            <div class="mb-1 text-muted">{{movie.release_date}}</div>
+            <p class="card-text text-justify mb-auto">{{movie.text}}...</p>
+            <button class="btn btn-outline-primary" (click)="setDetails(movie)">... Más detalles</button>
+          </div>
+          <div class="col-lg-auto ">
+
+            <img class="my-auto" src="https://image.tmdb.org/t/p/w185{{movie.poster_path}}" width="185" alt="....">
+
+          </div>
+        </div>
+      </div>
+    </div><!-- /.row mt-4 -->
+  </div><!-- /.blog-main -->
+  <app-search-details [infoDetails]="detail" (changeStatusDetail)="detail =$event"></app-search-details>
+</div><!-- /.row -->

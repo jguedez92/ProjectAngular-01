@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-12 blog-main" *ngIf="!detail">
+    <h2 class="blog-post-title border-bottom pb-2 mb-3">Proximos Estrenos</h2>
+    <div class="row">
+      <div *ngFor="let movie of moviesPremiere" class="col-sm-12 col-md-12 col-lg-6">
+        <div 
+          class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">+16</strong>
+            <h5 class="mb-0">{{movie.title}}</h5>
+            <div class="mb-1 text-muted">{{movie.release_date}}</div>
+            <p class="card-text text-justify mb-auto">{{movie.text}}</p>
+            <button class="btn btn-outline-primary" (click)="setDetails(movie)">... Más detalles</button>
+          </div>
+          <div class="col-lg-auto ">
+
+            <img class="my-auto" src="https://image.tmdb.org/t/p/w185{{movie.poster_path}}" width="185" alt="....">
+
+          </div>
+        </div>
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /.col-md-12 -->
+  <app-search-details [infoDetails]="detail" (changeStatusDetail)="detail =$event"></app-search-details>
+</div>

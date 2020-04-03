@@ -1,0 +1,61 @@
+<div *ngIf="infoDetails.title" class="container col-lg-10">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div
+          class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">+16</strong>
+            <h2 class="mb-0">{{infoDetails.title}}</h2>
+            <div class="mb-1 text-muted">{{infoDetails.release_date}}</div>
+            <p class="card-text text-justify mb-auto">{{infoDetails.overview}}</p>
+            <ul class="list-group mt-3 list-group-horizontal">
+              <li class="list-group-item font-weight-bolder">Average de Votos: <span class="text-muted">{{infoDetails.vote_average}}</span></li>
+              <li class="list-group-item font-weight-bolder text-uppercase">Lenguaje Original: <span class="font-weight-normal ">{{infoDetails.original_language}}</span></li>
+              <li class="list-group-item font-weight-bolder">Popularidad: <span class="font-weight-normal">{{infoDetails.popularity}}</span></li>
+          </ul>
+          </div>
+          <div class="col-lg-auto ">
+            <div class="row p-2">
+              <div class="col-12 my-auto p2">
+                <img class="rounded" src="https://image.tmdb.org/t/p/w185{{infoDetails.poster_path}}" width="200" alt="....">
+              </div>
+            </div>
+          </div>
+          <div class="card-footer col-lg-12 text-right p-3">
+            <a href="#" (click)="backComponent()" class="card-link">Atras</a>
+          </div>
+        </div>
+        
+      </div>
+</div>
+<div *ngIf="infoDetails.name" class="container col-lg-10">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+      <div
+        class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">+16</strong>
+          <h2 class="mb-0">{{infoDetails.name}}</h2>
+          <div class="mb-1 text-muted">{{infoDetails.first_air_date}}</div>
+          <p class="card-text text-justify mb-auto">{{infoDetails.overview}}</p>
+          <ul class="list-group mt-3 list-group-horizontal">
+            <li class="list-group-item font-weight-bolder">Average de Votos: <span class="text-muted">{{infoDetails.vote_average}}</span></li>
+            <li class="list-group-item font-weight-bolder text-uppercase">Lenguaje Original: <span class="font-weight-normal ">{{infoDetails.original_language}}</span></li>
+            <li class="list-group-item font-weight-bolder">Popularidad: <span class="font-weight-normal">{{infoDetails.popularity}}</span></li>
+        </ul>
+        </div>
+        <div class="col-lg-auto ">
+          <div class="row p-2">
+            <div class="col-12 my-auto p2">
+              <img class="rounded" src="https://image.tmdb.org/t/p/w185{{infoDetails.poster_path}}" width="200" alt="....">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer col-lg-12 text-right p-3">
+          <a href="#" (click)="backComponent()" class="card-link">Atras</a>
+        </div>
+      </div>  
+    </div>
+</div>
+
+
+
+
